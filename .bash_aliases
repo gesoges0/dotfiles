@@ -1,5 +1,6 @@
 alias pbcopy='xsel --clipboard --input'
 
+# git
 alias gs='git status'
 alias gl='git log'
 alias ga='git add'
@@ -10,7 +11,7 @@ alias cb="git symbolic-ref --short HEAD | tr -d '\n' | pbcopy"
 alias gd='git diff'
 alias gdh='git diff HEAD^ HEAD'
 
-
+# diff
 alias diff="colordiff -y -W 30" # --suppress-common-lines"
 
 # branch name
