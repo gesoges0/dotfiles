@@ -22,3 +22,13 @@ export PATH=$PATH:/usr/local/go/bin
 
 # Python
 alias python="python3"
+
+# format
+alias f="isort $1; black $1"
+
+# lsd
+alias ls='lsd'
+alias l='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'

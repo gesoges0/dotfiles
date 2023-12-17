@@ -1,5 +1,14 @@
 font:
     size: 12.0
+    normal:
+        family: DroidSansM Nerd Font
+        style: Regular
+    bold:
+        family: DroidSansM Nerd Font
+        style: Bold
+    italic:
+        family: DroidSansM Nerd Font
+        style: Italic
 window:
     dimensions:
         columns: 120
