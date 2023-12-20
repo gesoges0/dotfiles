@@ -6,3 +6,4 @@ ln -sf ~/src/dotfiles/.tmux.conf ~/.tmux.conf
 ln -sf ~/src/dotfiles/.config/lsd/config.yaml ~/.config/lsd/config.yaml
 ln -sf ~/src/dotfiles/.config/lsd/themes.yaml ~/.config/lsd/themes.yaml
 ln -sf ~/src/dotfiles/.config/lsd/icons.yaml ~/.config/lsd/icons.yaml
+ln -sf ~/src/dotfiles/.gitconfig ~/.gitconfig
