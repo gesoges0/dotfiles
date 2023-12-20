@@ -10,10 +10,8 @@
 
 # https://github.com/dandavison/delta
 # fdfcc8fce30754a4f05eeb167a15d519888fc909
-
-# https://github.com/dandavison/delta/blob/main/themes.gitconfig
 [include]
-    path = ~/src/dotfiles/delta/themes.gitconfig
+    path = /home/gesogeso/src/dotfiles/.delta/themes.gitonfig
 
 [core]
     pager = delta
@@ -24,12 +22,42 @@
 [delta]
     navigate = true    # use n and N to move between diff sections
     light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
-    features = my-delta-config
+    side-by-side = true
+    features = my-delta-config unobtrusive-line-numbers decorations my-color-moved-theme zebra-dark
 
 [delta "my-delta-config"]
-    side-by-side = true
-    # line-numbers = true
-    # features = woolly-mammoth
+    # https://dandavison.github.io/delta/choosing-colors-styles.html
+    minus-style = black bold ul "#c78b94"
+    line-numbers = true
+    # line-numbers-left-format = ""
+    # line-numbers-right-format = "│ "
+    # hyperlinks = true
+    # hyperlinks-file-link-format = "vscode://file/{path}:{line}"
+    # diff-highlights = "bold green"
+    
+[delta "unobtrusive-line-numbers"]
+    line-numbers = true
+    # line-numbers-minus-style = "#444444"
+    # line-numbers-zero-style = "#444444"
+    # line-numbers-plus-style = "#444444"
+    # line-numbers-left-format = "{nm:>4}┊"
+    # line-numbers-right-format = "{np:>4}│"
+    line-numbers-left-style = blue
+    line-numbers-right-style = blue
+
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold blue ul
+    file-decoration-style = none
+    hunk-header-decoration-style = yellow box
+
+[delta "my-color-moved-theme"]
+    git-moved-from-style = bold purple     # An ad-hoc named style (must end in "-style")
+
+    map-styles = "my-color-moved-theme.git-moved-from-style => #a60a21 #1d83f0, \
+                  bold cyan => syntax #1d83f0"
+
+    # we could also have defined git-moved-to-style = bold cyan
 
 [merge]
     conflictstyle = diff3
