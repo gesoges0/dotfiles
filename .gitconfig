@@ -10,6 +10,11 @@
 
 # https://github.com/dandavison/delta
 # fdfcc8fce30754a4f05eeb167a15d519888fc909
+
+# https://github.com/dandavison/delta/blob/main/themes.gitconfig
+[include]
+    path = ~/src/dotfiles/delta/themes.gitconfig
+
 [core]
     pager = delta
 
@@ -19,11 +24,17 @@
 [delta]
     navigate = true    # use n and N to move between diff sections
     light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+    features = my-delta-config
+
+[delta "my-delta-config"]
     side-by-side = true
-    line-numbers = true
+    # line-numbers = true
+    # features = woolly-mammoth
 
 [merge]
     conflictstyle = diff3
 
 [diff]
     colorMoved = default
+    # https://git-scm.com/docs/git-diff#Documentation/git-diff.txt---color-movedltmodegt
+    # colorMoved = dimmed-zebra
