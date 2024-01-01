@@ -10,3 +10,4 @@ ln -sf ~/src/dotfiles/.gitconfig ~/.gitconfig
 ln -sf ~/src/dotfiles/.config/Code/User/settings.json ~/.config/Code/User/settings.json
 ln -sf ~/src/dotfiles/.delta/themes.gitconifg ~/.delta/themes.gitconfig
 ln -sf ~/src/dotfiles/.config/bat/config ~/.config/bat/config
+# bat --config-file
