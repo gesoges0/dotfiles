@@ -21,5 +21,6 @@
   "[go]": {
     "editor.defaultFormatter": "golang.go",
     "editor.formatOnSave": true
-  }
+  },
+  "editor.unicodeHighlight.nonBasicASCII": false,
 }
