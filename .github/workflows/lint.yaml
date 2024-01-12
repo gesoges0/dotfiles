@@ -34,9 +34,9 @@ jobs:
 
             src_path=$(echo "$src_file" | sed 's|~/src/dotfiles/||')
 
-            echo "check $src_file"
+            echo "check $src_path"
 
-            if [[ -e $src_path ]]; then
+            if [[ -e "$src_path" ]]; then
               
               # 予め定義しておいたshellscriptファイル
               # ~/.bash_aliasesは実行形式でもないしshebangもないためshellファイルであるかの判定が難しいため手動定義
