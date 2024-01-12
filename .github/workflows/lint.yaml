@@ -32,6 +32,8 @@ jobs:
               continue
             fi
 
+            echo "check $src_file"
+
             src_path="${src_file/#\~/$HOME}"
             if [ -e $src_path ]; then
               
