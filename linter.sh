@@ -1,7 +1,12 @@
 # /bin/bash
 
+# -e: エラーが出た時点で落とす
+# -u: 未設定変数を参照したら落とす
+# -o pipefail: pipeの連鎖で1つでもエラーとなったら落とす
+set -euo pipefail
+
 # shファイルと判定が難しいshファイル
-shell_file_list=(".bash_aliases" ".bashrc")
+shell_file_list=(".bash_aliases")
 
 while IFS= read -r line; do
   
@@ -17,6 +22,8 @@ while IFS= read -r line; do
   
   if [[ -e $src_path ]]; then
 
+    echo "check $src_path"
+
     # 予め定義しておいたshellscriptファイル
     # ~/.bash_aliasesは実行形式でもないしshebangもないためshellファイルであるかの
     # 判定が難しいため手動定義
@@ -28,15 +35,9 @@ while IFS= read -r line; do
     case "${src_path##*/}" in
       *.sh)
         shellcheck "$src_path"
-        if [[ $? != 0 ]]; then
-          exit 1
-        fi
         ;;
       *.yaml | *.yml)
         yamllint "$src_path"
-        if [[ $? != 0 ]]; then
-          exit 1
-        fi
         ;;
     esac
   fi
