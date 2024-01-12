@@ -28,9 +28,15 @@ while IFS= read -r line; do
     case "${src_path##*/}" in
       *.sh)
         shellcheck "$src_path"
+        if [[ $? != 0 ]]; then
+          exit 1
+        fi
         ;;
       *.yaml | *.yml)
         yamllint "$src_path"
+        if [[ $? != 0 ]]; then
+          exit 1
+        fi
         ;;
     esac
   fi
