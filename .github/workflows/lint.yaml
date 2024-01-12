@@ -1,4 +1,4 @@
-name: Shell Script Linting
+name: Linter
 
 on:
   push:
@@ -13,47 +13,12 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Set up shellcheck and yamllint
+    - name: Set up dependencies
       run: |
         sudo apt-get update
         sudo apt-get install -y shellcheck
         pip install yamllint
 
-    - name: Run linting
+    - name: Run linter.sh
       run: |
-        # Your shell script content goes here
-        /bin/bash -c '
-          shell_file_list=(".bash_aliases" ".bashrc")
-
-          while IFS= read -r line; do
-            src_file=$(echo "$line" | awk '\''{print $3}'\'')
-
-            if [ -z "$src_file" ]; then
-              continue
-            fi
-
-            src_path=$(echo "$src_file" | sed 's|~/src/dotfiles/||')
-
-            echo "check $src_path"
-
-            if [[ -e "$src_path" ]]; then
-              
-              # 予め定義しておいたshellscriptファイル
-              # ~/.bash_aliasesは実行形式でもないしshebangもないためshellファイルであるかの判定が難しいため手動定義
-              if [[ "${shell_file_list[@]}" =~ $(basename "$src_file") ]];then
-                shellcheck "$src_path"
-              fi
-
-              # 拡張子で判定できるものは拡張子をもとにファイルに沿ったリントをかける
-              case "${src_path##*/}" in
-                *.sh)
-                  shellcheck "$src_path"
-                  ;;
-                *.yaml | *.yml)
-                  yamllint "$src_path"
-                  ;;
-              esac
-            fi
-          done < dotfilesLink.sh
-        '
-
+        bash linter.sh
