@@ -1,5 +1,5 @@
 # /bin/bash
-shell_file_list=("~/.bash_aliases" "~/.bashrc")
+shell_file_list=(".bash_aliases" ".bashrc")
 
 while IFS= read -r line; do
   src_file=$(echo "$line" | awk '{print $3}')
@@ -11,11 +11,11 @@ while IFS= read -r line; do
   echo "check $src_path"
 
   src_path="${src_file/#\~/$HOME}"
-  if [ -e $src_path ]; then
-    
+  if [[ -e $src_path ]]; then
+
     # 予め定義しておいたshellscriptファイル
     # ~/.bash_aliasesは実行形式でもないしshebangもないためshellファイルであるかの判定が難しいため手動定義
-    if [[ "${shell_file_list[@]}" =~ "$src_file" ]];then
+    if [[ "${shell_file_list[@]}" =~ $(basename "$src_file") ]];then
       shellcheck "$src_path"
     fi
 
