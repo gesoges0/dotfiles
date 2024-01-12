@@ -1,21 +1,26 @@
 # /bin/bash
+
+# shファイルと判定が難しいshファイル
 shell_file_list=(".bash_aliases" ".bashrc")
 
 while IFS= read -r line; do
+  
+  # dotfilesLink.shに書いてあるファイル
   src_file=$(echo "$line" | awk '{print $3}')
 
   if [ -z "$src_file" ]; then
     continue
   fi
 
-  echo "check $src_path"
-
-  src_path="${src_file/#\~/$HOME}"
+  # ~/src/dotfiles/を空文字に置き換える
+  src_path=$(echo "$src_file" | sed 's|~/src/dotfiles/||')
+  
   if [[ -e $src_path ]]; then
 
     # 予め定義しておいたshellscriptファイル
-    # ~/.bash_aliasesは実行形式でもないしshebangもないためshellファイルであるかの判定が難しいため手動定義
-    if [[ "${shell_file_list[@]}" =~ $(basename "$src_file") ]];then
+    # ~/.bash_aliasesは実行形式でもないしshebangもないためshellファイルであるかの
+    # 判定が難しいため手動定義
+    if [[ "${shell_file_list[@]}" =~ "$src_path" ]];then
       shellcheck "$src_path"
     fi
 
