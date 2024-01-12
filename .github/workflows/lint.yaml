@@ -32,9 +32,10 @@ jobs:
               continue
             fi
 
+            src_path=$(echo "$src_file" | sed 's|~/src/dotfiles/||')
+
             echo "check $src_file"
 
-            src_path="${src_file/#\~/$HOME}"
             if [[ -e $src_path ]]; then
               
               # 予め定義しておいたshellscriptファイル
