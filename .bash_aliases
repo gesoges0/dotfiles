@@ -41,3 +41,9 @@ alias g='cd $(ghq list -p | fzf)'
 
 # python local server
 alias file-server='python -m http.server 8383'
+
+
+# fzf
+alias v='vim $(lsd | fzf)'
+alias b='bat $(lsd | fzf)'
+alias c='cat $(lsd | fzf)'
