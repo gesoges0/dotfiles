@@ -1,3 +1,5 @@
+# shellcheck disable=SC2148
+
 alias pbcopy='xsel --clipboard --input'
 
 # git
@@ -27,7 +29,10 @@ export PATH=$PATH:/usr/local/go/bin
 alias python="python3"
 
 # format
-alias f="isort $1; black $1"
+f(){
+   isort "$1"
+   black "$1"
+}
 
 # lsd
 alias ls='lsd'

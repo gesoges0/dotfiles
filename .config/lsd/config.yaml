@@ -1,3 +1,4 @@
+---
 # == Classic ==
 # This is a shorthand to override some of the options to be backwards compatible
 # with `ls`. It affects the "color"->"when", "sorting"->"dir-grouping", "date"
@@ -142,7 +143,7 @@ header: false
 # How to truncate the username and group names for a file if they exceed a certain
 # number of characters.
 # truncate-owner:
-  # Number of characters to keep. By default, no truncation is done (empty value).
-  # after:
-  # String to be appended to a name if truncated.
-  # marker: ""
+# Number of characters to keep. By default, no truncation is done (empty value).
+# after:
+# String to be appended to a name if truncated.
+# marker: ""
