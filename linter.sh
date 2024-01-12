@@ -2,11 +2,13 @@
 shell_file_list=("~/.bash_aliases" "~/.bashrc")
 
 while IFS= read -r line; do
-  src_file=$(echo "$line" | awk '{print $4}')
+  src_file=$(echo "$line" | awk '{print $3}')
 
   if [ -z "$src_file" ]; then
     continue
   fi
+
+  echo "check $src_path"
 
   src_path="${src_file/#\~/$HOME}"
   if [ -e $src_path ]; then
