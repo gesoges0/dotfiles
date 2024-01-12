@@ -8,8 +8,11 @@ alias gc='git commit'
 alias gs='git status'
 alias gb='git branch'
 alias cb="git symbolic-ref --short HEAD | tr -d '\n' | pbcopy"
+alias tb="git symbolic-ref --short HEAD|tr -d \"\\n\""
 alias gd='git diff'
+alias gdc='git diff --cached'
 alias gdh='git diff HEAD^ HEAD'
+alias gp='git push origin $(tb)'
 
 # diff
 alias diff="colordiff -y -W 30" # --suppress-common-lines"
@@ -35,3 +38,6 @@ alias lt='ls --tree'
 
 # ghq
 alias g='cd $(ghq list -p | fzf)'
+
+# python local server
+alias file-server='python -m http.server 8383'

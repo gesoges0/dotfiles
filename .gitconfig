@@ -38,3 +38,5 @@
     colorMoved = default
     # https://git-scm.com/docs/git-diff#Documentation/git-diff.txt---color-movedltmodegt
     # colorMoved = dimmed-zebra
+[commit]
+	allowEmptyMessage = false
