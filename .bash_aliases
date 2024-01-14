@@ -54,3 +54,20 @@ alias c='cat $(lsd | fzf)'
 
 # ranger
 alias r='ranger'
+
+# ANISカラーコード表示
+# https://gist.github.com/nekonenene/5226c6663b87527ae333
+function ansi_color {
+    for a in 3 4 ; do
+        for b in 0 1 2 4 7 ; do
+            for n in ${a}0 ${a}1 ${a}2 ${a}3 ${a}4 ${a}5 ${a}6 ${a}7 ; do
+                echo -en "\e[${b};${n}m"
+                echo -n  "\e[${b};${n}m"
+                echo -ne "\e[0m"
+                echo -n  "  "
+            done
+            echo
+        done
+        echo
+    done
+}
