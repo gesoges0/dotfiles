@@ -1,4 +1,5 @@
 #!/bin/sh
+ln -sf ~/src/dotfiles/.bashrc ~/.bashrc
 ln -sf ~/src/dotfiles/.bash_aliases ~/.bash_aliases
 ln -sf ~/src/dotfiles/.vimrc ~/.vimrc
 ln -sf ~/src/dotfiles/.alacritty.yml ~/.alacritty.yml
@@ -10,3 +11,4 @@ ln -sf ~/src/dotfiles/.gitconfig ~/.gitconfig
 ln -sf ~/src/dotfiles/.config/Code/User/settings.json ~/.config/Code/User/settings.json
 ln -sf ~/src/dotfiles/.delta/themes.gitconifg ~/.delta/themes.gitconfig
 ln -sf ~/src/dotfiles/.config/bat/config ~/.config/bat/config
+ln -sf ~/src/dotfiles/.config/ranger/rc.conf ~/.config/ranger/rc.conf
