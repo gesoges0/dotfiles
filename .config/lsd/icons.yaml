@@ -4,6 +4,8 @@ name:
   .cargo: 
   .emacs.d: 
   a.out: 
+  dockerfile: 🐳
+  docker-compose.yml: 🐳
 extension:
   go: 
   hs: 
