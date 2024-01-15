@@ -166,4 +166,9 @@ convert_video_to_gif() {
     ffmpeg -i "$output_file" -r ${frame_rate} "$gif_file"
 
     echo "Conversion completed. GIF file: $gif_file"
-} 
+}
+
+# Airflow
+# https://airflow.apache.org/docs/apache-airflow/stable/start.html
+export AIRFLOW_HOME=~/airflow
+ 
