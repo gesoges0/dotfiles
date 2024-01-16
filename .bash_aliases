@@ -81,7 +81,7 @@ alias -- -="cd -"
 
 # https://github.com/mathiasbynens/dotfiles/blob/main/.aliases
 # Reload the shell (i.e. invoke as a login shell)
-alias reload="exec ${SHELL} -l"
+alias reload="exec '$SHELL' -l"
 
 # Get week number
 alias week='date +%V'
