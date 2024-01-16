@@ -71,3 +71,20 @@ function ansi_color {
         echo
     done
 }
+
+# https://github.com/thoughtbot/dotfiles/blob/main/aliases
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias -- -="cd -"
+
+
+# https://github.com/mathiasbynens/dotfiles/blob/main/.aliases
+# Reload the shell (i.e. invoke as a login shell)
+alias reload="exec ${SHELL} -l"
+
+# Get week number
+alias week='date +%V'
+
+# deactivate venv
+alias da='deactivate'
