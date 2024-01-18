@@ -13,3 +13,4 @@ ln -sf ~/src/dotfiles/.delta/themes.gitconifg ~/.delta/themes.gitconfig
 ln -sf ~/src/dotfiles/.config/bat/config ~/.config/bat/config
 ln -sf ~/src/dotfiles/.config/ranger/rc.conf ~/.config/ranger/rc.conf
 ln -sf ~/src/dotfiles/.yamllint.yaml ~/.yamllint.yaml
+ln -sf ~/src/dotfiles/.config/ranger/scope.sh ~/.config/ranger/scope.sh
