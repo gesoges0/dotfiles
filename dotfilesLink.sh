@@ -10,7 +10,7 @@ ln -sf ~/src/dotfiles/.config/lsd/icons.yaml ~/.config/lsd/icons.yaml
 ln -sf ~/src/dotfiles/.config/lsd/themes.yaml ~/.config/lsd/themes.yaml
 ln -sf ~/src/dotfiles/.config/ranger/rc.conf ~/.config/ranger/rc.conf
 ln -sf ~/src/dotfiles/.config/ranger/scope.sh ~/.config/ranger/scope.sh
-ln -sf ~/src/dotfiles/.delta/themes.gitconifg ~/.delta/themes.gitconfig
+ln -sf ~/src/dotfiles/.delta/themes.gitconfig ~/.delta/themes.gitconfig
 ln -sf ~/src/dotfiles/.gitconfig ~/.gitconfig
 ln -sf ~/src/dotfiles/.tmux.conf ~/.tmux.conf
 ln -sf ~/src/dotfiles/.vimrc ~/.vimrc
