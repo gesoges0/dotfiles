@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# scale_video
+# eg1) 幅指定なし（デフォルトで600）
+#      convert-video-to-gif example.webm
+# eg2) 幅を指定して変換
+#      convert-video-to-gif example.mp4 800
+if [ -z "$1" ]; then
+    echo "Usage: convert_video_to_gif <input_video_file> [width]"
+    exit 1
+fi
+
+input_file="$1"
+width=${2:-600}  # 幅を指定, デフォルトは600
+frame_rate=${3:-30}  # フレームレートを指定, デフォルトは30
+
+output_file="${input_file%.*}_scaled.${input_file##*.}"
+gif_file="${input_file%.*}_scaled.gif"
+
+# 1. 幅を指定した値にスケーリング
+ffmpeg -i "$input_file" -vf scale=${width}:-1 "$output_file"
+
+# 2. スケーリングされた動画を30fpsのGIFに変換
+ffmpeg -i "$output_file" -r ${frame_rate} "$gif_file"
+
+echo "Conversion completed. GIF file: $gif_file"
