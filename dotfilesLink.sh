@@ -2,7 +2,6 @@
 ln -sf ~/src/dotfiles/.alacritty.yml ~/.alacritty.yml
 ln -sf ~/src/dotfiles/.bash_aliases ~/.bash_aliases
 ln -sf ~/src/dotfiles/.bashrc ~/.bashrc
-ln -sf ~/src/dotfiles/.bin ~/.bin
 ln -sf ~/src/dotfiles/.config/Code/User/settings.json ~/.config/Code/User/settings.json
 ln -sf ~/src/dotfiles/.config/bat/config ~/.config/bat/config
 ln -sf ~/src/dotfiles/.config/lsd/config.yaml ~/.config/lsd/config.yaml
@@ -15,4 +14,8 @@ ln -sf ~/src/dotfiles/.gitconfig ~/.gitconfig
 ln -sf ~/src/dotfiles/.tmux.conf ~/.tmux.conf
 ln -sf ~/src/dotfiles/.vimrc ~/.vimrc
 ln -sf ~/src/dotfiles/.yamllint.yaml ~/.yamllint.yaml
+
+# direcotory
+[ -L ~/.bin ] || ln -sf ~/src/dotfiles/.bin ~/.bin
+[ -L ~/.config/oh-my-posh ] || ln -sf ~/src/dotfiles/.config/oh-my-posh ~/.config/oh-my-posh
 

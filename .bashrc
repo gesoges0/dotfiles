@@ -147,3 +147,12 @@ export AIRFLOW_HOME=~/airflow
  
 # ~/.bin/*.sh
 export PATH="${HOME}/.bin:$PATH"
+
+# oh-my-posh
+# https://ohmyposh.dev/docs/installation
+export PATH="${HOME}/.oh-my-posh:$PATH"
+
+# eval "$(oh-my-posh init bash)"
+eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/unicorn.omp.json)"
+
+
