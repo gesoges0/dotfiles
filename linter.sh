@@ -5,7 +5,6 @@
 # -o pipefail: pipeの連鎖で1つでもエラーとなったら落とす
 set -euo pipefail
 
-# 
 process_file(){
   path="$1"
   if [[ -e $path ]]; then
@@ -35,14 +34,12 @@ process_file(){
 shell_file_list=(".bash_aliases")
 
 while IFS= read -r line; do
- 
-  # dotfilesLink.shに書いてあるファイル
   # Ignore lines starting with '#'
   if [[ $line == \#* ]]; then
     continue
   fi
 
-  # Get the first character of the line
+  # Get the first character of the line and assign to src_file
   first_char="${line:0:1}"
 
   case $first_char in

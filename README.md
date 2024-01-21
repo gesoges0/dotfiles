@@ -1,6 +1,9 @@
 # dotfiles
 
-## Examples
+## Image
+![eadc1e9ab30c9eb9dfea224939974ba1b7388420](/image/dotfiles_eadc1e9.png)
+
+## Usage
 `~/.alacritty.yml`をgit管理したい場合
 
 `dotfilesLink.sh`にシンボリックリンクを記述
