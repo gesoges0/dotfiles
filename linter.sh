@@ -35,9 +35,27 @@ process_file(){
 shell_file_list=(".bash_aliases")
 
 while IFS= read -r line; do
-  
+ 
   # dotfilesLink.shに書いてあるファイル
-  src_file=$(echo "$line" | awk '{print $3}')
+  # Ignore lines starting with '#'
+  if [[ $line == \#* ]]; then
+    continue
+  fi
+
+  # Get the first character of the line
+  first_char="${line:0:1}"
+
+  case $first_char in
+    "#")
+      # Ignore comments
+      ;;
+    "[")
+      src_file=$(echo "$line" | awk '{print $8}')
+      ;;
+    "l")
+      src_file=$(echo "$line" | awk '{print $3}')
+      ;;
+  esac
 
   if [ -z "$src_file" ]; then
     continue
