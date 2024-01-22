@@ -153,6 +153,6 @@ export PATH="${HOME}/.bin:$PATH"
 export PATH="${HOME}/.oh-my-posh:$PATH"
 
 # eval "$(oh-my-posh init bash)"
-eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/unicorn.omp.json)"
+eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/unicorn.mine.json)"
 
 
