@@ -18,4 +18,4 @@ ln -sf ~/src/dotfiles/.yamllint.yaml ~/.yamllint.yaml
 # direcotory
 [ -L ~/.bin ] || ln -sf ~/src/dotfiles/.bin ~/.bin
 [ -L ~/.config/oh-my-posh ] || ln -sf ~/src/dotfiles/.config/oh-my-posh ~/.config/oh-my-posh
-
+[ -L ~/.config/nvim ] || ln -sf ~/src/dotfiles/.config/nvim ~/.config/nvim
