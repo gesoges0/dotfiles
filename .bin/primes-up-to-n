@@ -1,0 +1,43 @@
+#!/bin/bash
+
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 <N>"
+    exit 1
+fi
+
+N=$1
+
+if ! [[ "$N" =~ ^[0-9]+$ ]]; then
+    echo "Error: Please enter a valid positive integer."
+    exit 1
+fi
+
+if [ "$N" -lt 2 ]; then
+    echo "There are no prime numbers up to $N."
+    exit 0
+fi
+
+# Initialize an array to store whether numbers are prime or not
+declare -a is_prime
+
+for ((i = 2; i <= N; i++)); do
+    is_prime[$i]=1
+done
+
+# Use the Sieve of Eratosthenes algorithm to find prime numbers
+for ((i = 2; i * i <= N; i++)); do
+    if [ "${is_prime[$i]}" -eq 1 ]; then
+        for ((j = i * i; j <= N; j += i)); do
+            is_prime[$j]=0
+        done
+    fi
+done
+
+# Print the prime numbers
+echo "Prime numbers up to $N:"
+for ((i = 2; i <= N; i++)); do
+    if [ "${is_prime[$i]}" -eq 1 ]; then
+        echo "$i"
+    fi
+done
+
