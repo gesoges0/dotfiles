@@ -10,6 +10,12 @@ require('packer').startup { function()
     'rmehri01/onenord.nvim',
     config = function() require 'extensions.onenord' end,
   }
+  -- https://coralpink.github.io/commentary/neovim/plugin/lualine.html
+  use {
+    'nvim-lualine/lualine.nvim',
+    config = function() require 'extensions.lualine' end,
+    requires = { 'nvim-tree/nvim-web-devicons' },
+  }
 end,
 config = {
   display = {
