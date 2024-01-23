@@ -16,6 +16,11 @@ require('packer').startup { function()
     config = function() require 'extensions.lualine' end,
     requires = { 'nvim-tree/nvim-web-devicons' },
   }
+  -- https://coralpink.github.io/commentary/neovim/plugin/nvim-hlslens.html 
+  use {
+    'kevinhwang91/nvim-hlslens',
+    config = function() require 'extensions.nvim-hlslens' end,
+  }
 end,
 config = {
   display = {
