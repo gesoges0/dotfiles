@@ -155,4 +155,10 @@ export PATH="${HOME}/.oh-my-posh:$PATH"
 # eval "$(oh-my-posh init bash)"
 eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/unicorn.mine.json)"
 
-
+# bash-completion
+# download http://mirrors.kernel.org/ubuntu/pool/main/b/bash-completion/bash-completion_2.11-5ubuntu1_all.deb
+# dpkg -i xxx.deb
+# https://github.com/scop/bash-completion?tab=readme-ov-file
+# Use bash-completion, if available
+[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
+    . /usr/share/bash-completion/bash_completion
