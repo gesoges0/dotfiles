@@ -173,3 +173,8 @@ source /home/gesogeso/.config/broot/launcher/bash/br
 # ghq clone git@github.com:adamsky/globe.git
 # cargo run --release
 PATH="${HOME}/ghq/github.com/adamsky/globe/target/release:$PATH"
+
+# gvm
+# 下記Issueを反映
+# https://github.com/moovweb/gvm/issues/455
+[[ -s "/home/gesogeso/.gvm/scripts/gvm" ]] && source "/home/gesogeso/.gvm/scripts/gvm"
