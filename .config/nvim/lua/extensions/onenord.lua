@@ -16,6 +16,10 @@ require('onenord').setup {
 
   custom_highlights = {
     MatchParen = { fg = colors.none, bg = colors.none, style = 'bold,underline' },
+
+    GitSignsAddLnInline = { fg = colors.none, bg = colors.none, style = 'underline' },
+    GitSignsChangeLnInline = { fg = colors.none, bg = colors.none, style = 'underline' },
+    GitSignsDeleteLnInline = { fg = colors.purple, bg = colors.none, style = 'bold,underline' },
   },
   custom_colors = {
     mypink = '#FFB2CC',
