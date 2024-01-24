@@ -73,6 +73,6 @@ alias da='deactivate'
 
 # broot
 # 
-alias b='broot'
+alias b='broot -sdp'
 alias bg='broot -g'
 alias bws='broot --whale-spotting'
