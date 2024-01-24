@@ -21,6 +21,12 @@ require('packer').startup { function()
     'kevinhwang91/nvim-hlslens',
     config = function() require 'extensions.nvim-hlslens' end,
   }
+  -- https://coralpink.github.io/commentary/neovim/plugin/gitsigns.html
+  use {
+  'lewis6991/gitsigns.nvim',
+  -- tag = 'release',
+  config = function() require 'extensions.gitsigns' end,
+}
 end,
 config = {
   display = {
