@@ -72,7 +72,11 @@ alias week='date +%V'
 alias da='deactivate'
 
 # broot
-# 
+# cargo install broot
 alias b='broot -sdp'
 alias bg='broot -g'
 alias bws='broot --whale-spotting'
+
+# tokei
+# cargo install tokei
+alias t='tokei'
