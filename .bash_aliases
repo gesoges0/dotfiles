@@ -29,10 +29,8 @@ export PATH=$PATH:/usr/local/go/bin
 alias python="python3"
 
 # format
-f(){
-   isort "$1"
-   black "$1"
-}
+# ~/.bin/python-format
+alias f="python-format"
 
 # lsd
 alias ls='lsd'

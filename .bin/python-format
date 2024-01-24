@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ -n "$VIRTUAL_ENV" ]; then
+    isort "$@"
+    black "$@"
+else
+    echo "venvがactivateされていません。"
+fi
