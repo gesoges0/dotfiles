@@ -153,14 +153,15 @@ export PATH="${HOME}/.bin:$PATH"
 
 # oh-my-posh
 # [default]
-# https://ohmyposh.dev/docs/installation/linux
+#   https://ohmyposh.dev/docs/installation/linux
 # export PATH="${HOME}/.oh-my-posh:$PATH"
 # [my development]
-# mkdir ~/.oh-my-posh-mine
-# cd ~/ghq/github.com/gesoges0/oh-my-posh/src
-# gvm use go1.21
-# go build -o oh-my-posh
-# mv ~/.oh-my-posh-mine/oh-my-posh
+#   ghq get https://github.com/gesoges0/oh-my-posh@0f4003a61299bf5e936bd7269f5ac5da0f1673e8
+#   cd ~/ghq/github.com/gesoges0/oh-my-posh/src
+#   gvm use go1.21
+#   go build -o oh-my-posh
+#   mkdir ~/.oh-my-posh-mine
+#   mv ~/.oh-my-posh-mine/oh-my-posh
 export PATH="${HOME}/.oh-my-posh-mine:$PATH"
 
 # eval "$(oh-my-posh init bash)"
