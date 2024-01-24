@@ -128,9 +128,12 @@ export PATH="/home/gesogeso/.local/bin:$PATH"
 # 3022cf3686b85288e6fbecb2bd23ad113fd83f3b
 eval "$(zoxide init bash)"
 
-# Go
+# Go Excutable 
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+
+# Go
+export PATH=$PATH:/usr/local/go/bin
 
 # fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
@@ -150,6 +153,7 @@ export PATH="${HOME}/.bin:$PATH"
 
 # oh-my-posh
 # https://ohmyposh.dev/docs/installation
+# https://ohmyposh.dev/docs/installation/linux
 export PATH="${HOME}/.oh-my-posh:$PATH"
 
 # eval "$(oh-my-posh init bash)"
