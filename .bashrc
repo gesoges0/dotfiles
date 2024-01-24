@@ -162,3 +162,5 @@ eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/unicorn.mine.json)"
 # Use bash-completion, if available
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
     . /usr/share/bash-completion/bash_completion
+
+source /home/gesogeso/.config/broot/launcher/bash/br

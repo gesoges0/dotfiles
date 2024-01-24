@@ -70,3 +70,9 @@ alias week='date +%V'
 
 # deactivate venv
 alias da='deactivate'
+
+# broot
+# 
+alias b='broot'
+alias bg='broot -g'
+alias bws='broot --whale-spotting'
