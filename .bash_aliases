@@ -15,6 +15,7 @@ alias gd='git diff'
 alias gdc='git diff --cached'
 alias gdh='git diff HEAD^ HEAD'
 alias gp='git push origin $(tb)'
+alias gh-clone='ghq get'
 
 # diff
 alias diff="colordiff -y -W 30" # --suppress-common-lines"
