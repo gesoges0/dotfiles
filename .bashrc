@@ -164,3 +164,8 @@ eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/unicorn.mine.json)"
     . /usr/share/bash-completion/bash_completion
 
 source /home/gesogeso/.config/broot/launcher/bash/br
+
+# globe (v.0.2.0)
+# ghq clone git@github.com:adamsky/globe.git
+# cargo run --release
+PATH="${HOME}/ghq/github.com/adamsky/globe/target/release:$PATH"
