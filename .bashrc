@@ -119,6 +119,9 @@ if ! shopt -oq posix; then
 fi
 export PATH=$PATH:/home/gesogeso/src/tohoho-typescript-tutorial/sample/node_modules/.bin
 
+# Prompt
+# export PS1='\[\033[01;32m\]\u@\h\[\033[01;33m\] \w \[\033[01;31m\]$(__git_ps1 "(%s)") \[\033[01;34m\]\$\[\033[00m\] '
+
 # poetry
 export PATH="/home/gesogeso/.local/bin:$PATH"
 . "$HOME/.cargo/env"
