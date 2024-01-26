@@ -117,7 +117,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-export PATH=$PATH:/home/gesogeso/src/tohoho-typescript-tutorial/sample/node_modules/.bin
+# export PATH=$PATH:/home/gesogeso/src/tohoho-typescript-tutorial/sample/node_modules/.bin
 
 # Prompt
 # export PS1='\[\033[01;32m\]\u@\h\[\033[01;33m\] \w \[\033[01;31m\]$(__git_ps1 "(%s)") \[\033[01;34m\]\$\[\033[00m\] '
@@ -129,6 +129,8 @@ export PATH="/home/gesogeso/.local/bin:$PATH"
 # zoxide
 # https://github.com/ajeetdsouza/zoxide
 # 3022cf3686b85288e6fbecb2bd23ad113fd83f3b
+# z: 以前のディレクトリに移動
+# zi: ディレクトリの検索 & 移動
 eval "$(zoxide init bash)"
 
 # Go Excutable 
@@ -189,3 +191,17 @@ PATH="${HOME}/ghq/github.com/adamsky/globe/target/release:$PATH"
 # 下記Issueを反映
 # https://github.com/moovweb/gvm/issues/455
 [[ -s "/home/gesogeso/.gvm/scripts/gvm" ]] && source "/home/gesogeso/.gvm/scripts/gvm"
+
+# mcfly
+# https://github.com/cantino/mcfly?tab=readme-ov-file
+# https://github.com/cantino/mcfly/releases
+# mcfly-v0.8.4-x86_64-unknown-linux-musl.tar.gz
+# Ctrl-r で候補表示
+eval "$(mcfly init bash)"
+if [[ "$(defaults read -g AppleInterfaceStyle 2&>/dev/null)" != "Dark" ]]; then
+    export MCFLY_LIGHT=TRUE  # 画面遷移せず同画面で候補を表示
+    export MCFLY_KEY_SCHEME=vim  # key-bindをvimに
+    export MCFLY_FUZZY=2  # fuzzy-searching
+    export MCFLY_RESULTS=50  # 結果件数
+    export MCFLY_PROMPT="❯"  # prompt
+fi
