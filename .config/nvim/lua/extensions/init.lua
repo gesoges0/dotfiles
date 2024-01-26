@@ -16,6 +16,7 @@ require("packer").startup({
 			end,
 		})
 		-- https://coralpink.github.io/commentary/neovim/plugin/lualine.html
+		-- https://coralpink.github.io/commentary/neovim/plugin/lualine-part2.html
 		use({
 			"nvim-lualine/lualine.nvim",
 			config = function()
@@ -38,6 +39,15 @@ require("packer").startup({
 				require("extensions.gitsigns")
 			end,
 		})
+ 	        -- https://coralpink.github.io/commentary/neovim/plugin/nvim-scrollbar.html
+        	use ({
+	            'petertriho/nvim-scrollbar',
+        	    config = function() require 'extensions.nvim-scrollbar' end,
+	            requires = {
+        		'kevinhwang91/nvim-hlslens', 
+			'lewis6991/gitsigns.nvim' 
+		    },
+	        })
 	end,
 	config = {
 		display = {
