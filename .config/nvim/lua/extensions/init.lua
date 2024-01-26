@@ -17,12 +17,17 @@ require("packer").startup({
 		})
 		-- https://coralpink.github.io/commentary/neovim/plugin/lualine.html
 		-- https://coralpink.github.io/commentary/neovim/plugin/lualine-part2.html
+		-- https://coralpink.github.io/commentary/neovim/plugin/lualine-part3.html
 		use({
 			"nvim-lualine/lualine.nvim",
 			config = function()
 				require("extensions.lualine")
 			end,
-			requires = { "nvim-tree/nvim-web-devicons" },
+			requires = { 
+				'nvim-tree/nvim-web-devicons',
+				'rmehri01/onenord.nvim',
+				'lewis6991/gitsigns.nvim',
+			},
 		})
 		-- https://coralpink.github.io/commentary/neovim/plugin/nvim-hlslens.html
 		use({
