@@ -43,7 +43,6 @@ alias file-server='python -m http.server 8383'
 # fzf
 alias v='vim $(lsd | fzf)'
 alias b='bat $(lsd | fzf)'
-alias c='cat $(lsd | fzf)'
 
 # ranger
 alias r='ranger'
@@ -73,3 +72,8 @@ alias bws='broot --whale-spotting'
 # tokei
 # cargo install tokei
 alias t='tokei'
+
+alias c='clear'
+
+# vim -> nvim
+alias vim='nvim'
