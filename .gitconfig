@@ -39,4 +39,12 @@
     # https://git-scm.com/docs/git-diff#Documentation/git-diff.txt---color-movedltmodegt
     # colorMoved = dimmed-zebra
 [commit]
-	allowEmptyMessage = false
+    allowEmptyMessage = false
+
+# https://jvns.ca/blog/2024/02/16/popular-git-config-options/#core-pager-delta
+[fetch]
+    	# 削除されたリモート追跡ブランチを自動的に削除
+	prune = true
+[branch]
+	# gitブランチをアルファベット順ではなく、最近使われたブランチ順にソートします
+	sort = -committerdate
