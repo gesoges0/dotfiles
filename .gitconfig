@@ -48,3 +48,5 @@
 [branch]
 	# gitブランチをアルファベット順ではなく、最近使われたブランチ順にソートします
 	sort = -committerdate
+[help]
+	autocorrect = 10
