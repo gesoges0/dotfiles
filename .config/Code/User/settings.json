@@ -15,7 +15,7 @@
   "python.analysis.extraPaths": [],
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter",
-    "editor.formatOnType": true
+    "editor.formatOnType": true,
   },
   // Go
   "[go]": {
