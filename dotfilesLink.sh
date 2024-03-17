@@ -1,6 +1,7 @@
 #!/bin/sh
 ln -sf ~/src/dotfiles/.alacritty.yml ~/.alacritty.yml
 ln -sf ~/src/dotfiles/.bash_aliases ~/.bash_aliases
+ln -sf ~/src/dotfiles/.bash_profile ~/.bash_profile
 ln -sf ~/src/dotfiles/.bashrc ~/.bashrc
 ln -sf ~/src/dotfiles/.config/Code/User/settings.json ~/.config/Code/User/settings.json
 ln -sf ~/src/dotfiles/.config/bat/config ~/.config/bat/config
