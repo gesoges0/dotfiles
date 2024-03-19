@@ -98,7 +98,15 @@
           "style": "plain",
           "template": "🦄 ",
           "type": "text"
-        }
+        },
+	{
+	  "type": "terraform",
+	  "style": "powerline",
+	  "powerline_symbol": "",
+	  "foreground": "#000000",
+	  "background": "#ebcc34",
+	  "template": "terraform workspace: ({{.WorkspaceName}})"
+	}
       ],
       "type": "prompt"
     }
