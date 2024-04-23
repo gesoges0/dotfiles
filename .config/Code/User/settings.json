@@ -23,4 +23,5 @@
     "editor.formatOnSave": true
   },
   "editor.unicodeHighlight.nonBasicASCII": false,
+  "editor.fontSize": 12,
 }
