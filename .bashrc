@@ -18,8 +18,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=10000
+HISTFILESIZE=20000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -197,11 +197,39 @@ PATH="${HOME}/ghq/github.com/adamsky/globe/target/release:$PATH"
 # https://github.com/cantino/mcfly/releases
 # mcfly-v0.8.4-x86_64-unknown-linux-musl.tar.gz
 # Ctrl-r で候補表示
+# Ctrl-t でファイル候補表示
 eval "$(mcfly init bash)"
 if [[ "$(defaults read -g AppleInterfaceStyle 2&>/dev/null)" != "Dark" ]]; then
-    export MCFLY_LIGHT=TRUE  # 画面遷移せず同画面で候補を表示
+    # export MCFLY_LIGHT=TRUE  # 画面遷移せず同画面で候補を表示
     export MCFLY_KEY_SCHEME=vim  # key-bindをvimに
     export MCFLY_FUZZY=2  # fuzzy-searching
     export MCFLY_RESULTS=50  # 結果件数
     export MCFLY_PROMPT="❯"  # prompt
 fi
+
+# https://gist.github.com/azu/55fc2e450ed30498eec56b60a88db89b
+# zoxide + fzf + bat + exa
+# export _ZO_FZF_OPTS='
+#     --no-sort --height 75% --reverse --margin=0,1 --exit-0 --select-1
+#     --bind ctrl-f:page-down,ctrl-b:page-up
+#     --bind pgdn:preview-page-down,pgup:preview-page-up
+#     --prompt="❯ "
+#     --color bg+:#262626,fg+:#dadada,hl:#f09479,hl+:#f09479
+#     --color border:#303030,info:#cfcfb0,header:#80a0ff,spinner:#36c692
+#     --color prompt:#87afff,pointer:#ff5189,marker:#f09479
+#     --preview "([[ -e '{2..}/README.md' ]] && bat --color=always --style=numbers --line-range=:50 '{2..}/README.md') || exa --color=always --group-directories-first --oneline {2..}"
+# '
+
+complete -C /usr/bin/terraform terraform
+
+# bigquery-emulator
+export CGO_ENABLED=1
+export CXX=clang++
+
+# goenv
+# https://github.com/go-nv/goenv/blob/master/INSTALL.md
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+eval "$(goenv init -)"
+export PATH="$GOROOT/bin:$PATH"
+export PATH="$PATH:$GOPATH/bin"
