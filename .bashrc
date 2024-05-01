@@ -147,7 +147,7 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH="${HOME}/src/tmp/duckdb/build/release:$PATH"
 
 # imgcat (tmuxで新規ペインを開いたときに実行されるように)
-imgcat "${HOME}/squidgirl.gif"
+# imgcat "${HOME}/squidgirl.gif"
 
 # Airflow
 # https://airflow.apache.org/docs/apache-airflow/stable/start.html
@@ -190,7 +190,8 @@ PATH="${HOME}/ghq/github.com/adamsky/globe/target/release:$PATH"
 # gvm
 # 下記Issueを反映
 # https://github.com/moovweb/gvm/issues/455
-[[ -s "/home/gesogeso/.gvm/scripts/gvm" ]] && source "/home/gesogeso/.gvm/scripts/gvm"
+# bash: /home/gesogeso/.gvm/scripts/env/cd: 行 46: `cd() {' でcdが使えなくなったので一旦様子見
+# [[ -s "/home/gesogeso/.gvm/scripts/gvm" ]] && source "/home/gesogeso/.gvm/scripts/gvm"
 
 # mcfly
 # https://github.com/cantino/mcfly?tab=readme-ov-file
@@ -223,13 +224,19 @@ fi
 complete -C /usr/bin/terraform terraform
 
 # bigquery-emulator
-export CGO_ENABLED=1
-export CXX=clang++
+# export CGO_ENABLED=1
+# export CXX=clang++
 
 # goenv
 # https://github.com/go-nv/goenv/blob/master/INSTALL.md
-export GOENV_ROOT="$HOME/.goenv"
-export PATH="$GOENV_ROOT/bin:$PATH"
-eval "$(goenv init -)"
-export PATH="$GOROOT/bin:$PATH"
-export PATH="$PATH:$GOPATH/bin"
+# export GOENV_ROOT="$HOME/.goenv"
+# export PATH="$GOENV_ROOT/bin:$PATH"
+# eval "$(goenv init -)"
+# export PATH="$GOROOT/bin:$PATH"
+# export PATH="$PATH:$GOPATH/bin"
+
+# for some reason cd is no longer working
+# gvmの影響ありそう
+# source ~/.bashrc
+# bash: /home/gesogeso/.gvm/scripts/env/cd: 行 46: `cd() {'
+# alias cd="command cd"
