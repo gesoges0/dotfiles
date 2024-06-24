@@ -77,3 +77,27 @@ alias c='clear'
 
 # vim -> nvim
 alias vim='nvim'
+
+# git
+alias gg='git grep'
+
+# alias gdhhhhh="git diff HEAD~5 HEAD~4"
+gitdiff() {
+    local num_hs=${#1}
+    local start_commit="HEAD~$((num_hs + 1))"
+    local end_commit="HEAD~${num_hs}"
+
+    # commit hash
+    local start_hash=$(git rev-parse $start_commit)
+    local end_hash=$(git rev-parse $end_commit)
+
+    # git diff コマンドの実行
+    echo "git diff ${start_commit} ${end_commit}"
+    echo "git diff ${start_hash} ${end_hash}"
+    git diff "${start_commit}" "${end_commit}"
+}
+
+# エイリアスの設定
+for i in $(seq 1 20); do
+    alias gd$(printf 'h%.0s' $(seq 1 $i))="gitdiff $(printf 'h%.0s' $(seq 1 $i))"
+done
