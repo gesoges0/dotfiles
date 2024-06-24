@@ -84,8 +84,8 @@ alias gg='git grep'
 # alias gdhhhhh="git diff HEAD~5 HEAD~4"
 gitdiff() {
     local num_hs=${#1}
-    local start_commit="HEAD~$((num_hs + 1))"
-    local end_commit="HEAD~${num_hs}"
+    local start_commit="HEAD~${num_hs}"
+    local end_commit="HEAD~$((num_hs - 1))"
 
     # commit hash
     local start_hash=$(git rev-parse $start_commit)
