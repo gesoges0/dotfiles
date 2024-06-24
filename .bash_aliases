@@ -91,13 +91,12 @@ gitdiff() {
     local start_hash=$(git rev-parse $start_commit)
     local end_hash=$(git rev-parse $end_commit)
 
-    # git diff コマンドの実行
+    # git diff
     echo "git diff ${start_commit} ${end_commit}"
     echo "git diff ${start_hash} ${end_hash}"
     git diff "${start_commit}" "${end_commit}"
 }
 
-# エイリアスの設定
 for i in $(seq 1 20); do
     alias gd$(printf 'h%.0s' $(seq 1 $i))="gitdiff $(printf 'h%.0s' $(seq 1 $i))"
 done
