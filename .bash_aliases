@@ -91,9 +91,19 @@ gitdiff() {
     local start_hash=$(git rev-parse $start_commit)
     local end_hash=$(git rev-parse $end_commit)
 
+    # remote repository
+    local remote_url=$(git config --get remote.origin.url)
+    # convert https format
+    if [[ $remote_url == git@github.com:* ]]; then
+        local base_url="https://github.com/$(echo $remote_url | sed -e 's/git@github.com://;s/.git$//')"
+    else
+        local base_url=${remote_url%.git}
+    fi
+
     # git diff
     echo "git diff ${start_commit} ${end_commit}"
     echo "git diff ${start_hash} ${end_hash}"
+    echo "${base_url}/commit/${end_hash}"
     git diff "${start_commit}" "${end_commit}"
 }
 
