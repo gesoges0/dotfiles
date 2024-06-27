@@ -110,3 +110,15 @@ gitdiff() {
 for i in $(seq 1 20); do
     alias gd$(printf 'h%.0s' $(seq 1 $i))="gitdiff $(printf 'h%.0s' $(seq 1 $i))"
 done
+
+# git-squash: squash HEAD to HEAD^
+gitsquash() {
+	local head_message=$(git log -1 --pretty=%B)
+	local head_parent_message=$(git log -1 HEAD^ --pretty=%B)
+	git reset --soft HEAD^ && git commit --amend --no-edit -m "${head_parent_message}" -m "${head_message}"
+}
+
+alias git-squash="gitsquash"
+
+# git-fixup: fixup HEAD to HEAD^
+alias git-fixup='git reset --soft HEAD^ && git commit --amend --no-edit'
