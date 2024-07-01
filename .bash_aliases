@@ -113,9 +113,9 @@ done
 
 # git-squash: squash HEAD to HEAD^
 gitsquash() {
-	local head_message=$(git log -1 --pretty=%B)
-	local head_parent_message=$(git log -1 HEAD^ --pretty=%B)
-	git reset --soft HEAD^ && git commit --amend --no-edit -m "${head_parent_message}" -m "${head_message}"
+    local head_message=$(git log -1 --pretty=%B)
+    local head_parent_message=$(git log -1 HEAD^ --pretty=%B)
+    git reset --soft HEAD^ && git commit --amend --no-edit -m "${head_parent_message}" -m "${head_message}"
 }
 
 alias git-squash="gitsquash"
