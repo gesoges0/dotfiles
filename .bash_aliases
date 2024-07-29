@@ -122,3 +122,23 @@ alias git-squash="gitsquash"
 
 # git-fixup: fixup HEAD to HEAD^
 alias git-fixup='git reset --soft HEAD^ && git commit --amend --no-edit'
+
+# git grep word, then select with fzf, and open with nvim
+function ggv() {
+    # git grep を実行して fzf で選択
+    local result=$(git grep --line-number "$@" | fzf --ansi)
+
+    # 選択結果がない場合は終了
+    if [ -z "$result" ]; then
+        echo "No selection made."
+        return 1
+    fi
+    # 結果を解析してファイル名と行番号を抽出
+    local file=$(echo "$result" | cut -d':' -f1)
+    local line=$(echo "$result" | cut -d':' -f2)
+
+    # vim で指定の行を開く
+    nvim +$line $file
+}
+
+alias ggn='ggv'
