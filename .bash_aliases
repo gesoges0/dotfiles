@@ -129,7 +129,7 @@ ggv() {
     local result=$(git grep --line-number "$@" | fzf --ansi)
 
     # exit if selected nothing
-    if [ -z "$result" ]; then
+    if [ -z "${result}" ]; then
         echo "No selection made."
         return 1
     fi
