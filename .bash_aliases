@@ -125,19 +125,20 @@ alias git-fixup='git reset --soft HEAD^ && git commit --amend --no-edit'
 
 # git grep word, then select with fzf, and open with nvim
 ggv() {
-    # git grep を実行して fzf で選択
+    # git grep and select file with fzf
     local result=$(git grep --line-number "$@" | fzf --ansi)
 
-    # 選択結果がない場合は終了
+    # exit if selected nothing
     if [ -z "$result" ]; then
         echo "No selection made."
         return 1
     fi
-    # 結果を解析してファイル名と行番号を抽出
+
+    # extract file and line
     local file=$(echo "${result}" | cut -d':' -f1)
     local line=$(echo "${result}" | cut -d':' -f2)
 
-    # vim で指定の行を開く
+    # open with nvim
     nvim +$line $file
 }
 
