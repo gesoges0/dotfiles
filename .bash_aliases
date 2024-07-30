@@ -124,7 +124,7 @@ alias git-squash="gitsquash"
 alias git-fixup='git reset --soft HEAD^ && git commit --amend --no-edit'
 
 # git grep word, then select with fzf, and open with nvim
-function ggv() {
+ggv() {
     # git grep を実行して fzf で選択
     local result=$(git grep --line-number "$@" | fzf --ansi)
 
