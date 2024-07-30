@@ -134,8 +134,8 @@ function ggv() {
         return 1
     fi
     # 結果を解析してファイル名と行番号を抽出
-    local file=$(echo "$result" | cut -d':' -f1)
-    local line=$(echo "$result" | cut -d':' -f2)
+    local file=$(echo "${result}" | cut -d':' -f1)
+    local line=$(echo "${result}" | cut -d':' -f2)
 
     # vim で指定の行を開く
     nvim +$line $file
