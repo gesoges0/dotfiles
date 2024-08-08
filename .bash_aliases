@@ -130,31 +130,31 @@ ggv() {
     local results=$(git grep --line-number "$@")
 
     # 結果が空の場合は終了
-    if [ -z "$results" ]; then
+    if [ -z "${results}" ]; then
         echo "No matches found."
         return 1
     fi
 
     # 結果の行数をカウント
-    local count=$(echo "$results" | wc -l)
+    local count=$(echo "${results}" | wc -l)
 
     # 結果が1行だけの場合はそのまま開く
     if [ $count -eq 1 ]; then
-        local result="$results"
+        local result="${results}"
     else
         # 複数行の場合は fzf で選択
-        local result=$(echo "$results" | fzf --ansi)
+        local result=$(echo "${results}" | fzf --ansi)
 
         # 選択結果がない場合は終了
-        if [ -z "$result" ]; then
+        if [ -z "${result}" ]; then
             echo "No selection made."
             return 1
         fi
     fi
 
     # 結果を解析してファイル名と行番号を抽出
-    local file=$(echo "$result" | cut -d':' -f1)
-    local line=$(echo "$result" | cut -d':' -f2)
+    local file=$(echo "${result}" | cut -d':' -f1)
+    local line=$(echo "${result}" | cut -d':' -f2)
 
     # nvim で指定の行を開く
     nvim +$line $file
