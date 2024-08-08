@@ -123,22 +123,40 @@ alias git-squash="gitsquash"
 # git-fixup: fixup HEAD to HEAD^
 alias git-fixup='git reset --soft HEAD^ && git commit --amend --no-edit'
 
-# git grep word, then select with fzf, and open with nvim
-ggv() {
-    # git grep and select file with fzf
-    local result=$(git grep --line-number "$@" | fzf --ansi)
 
-    # exit if selected nothing
-    if [ -z "${result}" ]; then
-        echo "No selection made."
+# gg and open with nvim
+ggv() {
+    # git grep を実行して結果を変数に保存
+    local results=$(git grep --line-number "$@")
+
+    # 結果が空の場合は終了
+    if [ -z "${results}" ]; then
+        echo "No matches found."
         return 1
     fi
 
-    # extract file and line
+    # 結果の行数をカウント
+    local count=$(echo "${results}" | wc -l)
+
+    # 結果が1行だけの場合はそのまま開く
+    if [ $count -eq 1 ]; then
+        local result="${results}"
+    else
+        # 複数行の場合は fzf で選択
+        local result=$(echo "${results}" | fzf --ansi)
+
+        # 選択結果がない場合は終了
+        if [ -z "${result}" ]; then
+            echo "No selection made."
+            return 1
+        fi
+    fi
+
+    # 結果を解析してファイル名と行番号を抽出
     local file=$(echo "${result}" | cut -d':' -f1)
     local line=$(echo "${result}" | cut -d':' -f2)
 
-    # open with nvim
+    # nvim で指定の行を開く
     nvim +$line $file
 }
 
