@@ -127,7 +127,7 @@ alias git-fixup='git reset --soft HEAD^ && git commit --amend --no-edit'
 # gg and open with nvim
 ggv() {
     # git grep を実行して結果を変数に保存
-    local results=$(git grep --line-number "$@")
+    local results=$(git grep --color=always --line-number "$@")
 
     # 結果が空の場合は終了
     if [ -z "${results}" ]; then
