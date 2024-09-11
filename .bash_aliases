@@ -156,8 +156,8 @@ ggv() {
     fi
 
     # 結果を解析してファイル名と行番号を抽出
-    local file=$(echo "$result" | sed 's/^[ \t]*[0-9]*[ \t]*//' | cut -d':' -f1)↲
-    local line=$(echo "$result" | sed 's/^[ \t]*[0-9]*[ \t]*//' | cut -d':' -f2)↲
+    local file=$(echo "$result" | sed 's/^[ \t]*[0-9]*[ \t]*//' | cut -d':' -f1)
+    local line=$(echo "$result" | sed 's/^[ \t]*[0-9]*[ \t]*//' | cut -d':' -f2)
 
     # nvim で指定の行を開く
     nvim +$line $file
