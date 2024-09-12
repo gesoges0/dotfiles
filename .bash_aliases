@@ -142,8 +142,11 @@ ggv() {
     if [ $count -eq 1 ]; then
         local result="${results}"
     else
+        # 行番号取得
+        local numbered_results=$(echo "${results}" | nl -w2 -s' ')
+
         # 複数行の場合は fzf で選択
-        local result=$(echo "${results}" | fzf --ansi)
+        local result=$(echo "${numbered_results}" | fzf --ansi)
 
         # 選択結果がない場合は終了
         if [ -z "${result}" ]; then
@@ -153,8 +156,8 @@ ggv() {
     fi
 
     # 結果を解析してファイル名と行番号を抽出
-    local file=$(echo "${result}" | cut -d':' -f1)
-    local line=$(echo "${result}" | cut -d':' -f2)
+    local file=$(echo "$result" | sed 's/^[ \t]*[0-9]*[ \t]*//' | cut -d':' -f1)
+    local line=$(echo "$result" | sed 's/^[ \t]*[0-9]*[ \t]*//' | cut -d':' -f2)
 
     # nvim で指定の行を開く
     nvim +$line $file
