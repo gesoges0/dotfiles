@@ -15,6 +15,7 @@ ln -sf ~/src/dotfiles/.gitconfig ~/.gitconfig
 ln -sf ~/src/dotfiles/.tmux.conf ~/.tmux.conf
 ln -sf ~/src/dotfiles/.vimrc ~/.vimrc
 ln -sf ~/src/dotfiles/.yamllint.yaml ~/.yamllint.yaml
+ln -sf ~/src/dotfiles/.serie/.config ~/.serie/.config
 
 # direcotory
 [ -L ~/.bin ] || ln -sf ~/src/dotfiles/.bin ~/.bin
