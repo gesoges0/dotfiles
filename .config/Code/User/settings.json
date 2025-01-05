@@ -24,4 +24,5 @@
   },
   "editor.unicodeHighlight.nonBasicASCII": false,
   "editor.fontSize": 12,
+  "files.autoSave": "afterDelay",
 }

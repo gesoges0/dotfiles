@@ -240,3 +240,29 @@ complete -C /usr/bin/terraform terraform
 # source ~/.bashrc
 # bash: /home/gesogeso/.gvm/scripts/env/cd: 行 46: `cd() {'
 # alias cd="command cd"
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+
+eval "$(direnv hook bash)"
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+eval "$(uv generate-shell-completion bash)"
+eval "$(uvx --generate-shell-completion bash)"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/gesogeso/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/gesogeso/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/gesogeso/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/gesogeso/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+export SERIE_CONFIG_FILE="/home/gesogeso/.serie/.config"
