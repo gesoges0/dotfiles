@@ -2,7 +2,7 @@
 # $(pwd)/home
 WORK_DIR=$(pwd)/.config
 ln -sf $WORK_DIR/.alacritty.yml $HOME/.alacritty.yml
-ln -sf $WORK_DIR.bash_aliases $HOME/.bash_aliases
+ln -sf $WORK_DIR/.bash_aliases $HOME/.bash_aliases
 ln -sf $WORK_DIR/.bash_profile $HOME/.bash_profile
 ln -sf $WORK_DIR/.bashrc $HOME/.bashrc
 ln -sf $WORK_DIR/Code/User/settings.json $HOME/.config/Code/User/settings.json
