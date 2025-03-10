@@ -18,6 +18,7 @@ ln -sf $WORK_DIR/.tmux.conf $HOME/.tmux.conf
 ln -sf $WORK_DIR/.vimrc $HOME/.vimrc
 ln -sf $WORK_DIR/.yamllint.yaml $HOME/.yamllint.yaml
 ln -sf $WORK_DIR/.serie/.config $HOME/.serie/.config
+ln -sf $WORK_DIR/gromit-mpx/gromit-mpx.cfg $HOME/.config/gromit-mpx/gromit-mpx.cfg
 
 # direcotory
 [ -L ~/.bin ] || ln -sf $(pwd)/.bin $HOME/.bin
