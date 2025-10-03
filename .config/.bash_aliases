@@ -80,6 +80,7 @@ alias vim='nvim'
 
 # git
 alias gg='git grep'
+alias ghb='git browse .'
 
 # alias gdhhhhh="git diff HEAD~5 HEAD~4"
 gitdiff() {
