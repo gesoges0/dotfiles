@@ -266,3 +266,10 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 export SERIE_CONFIG_FILE="/home/gesogeso/.serie/.config"
+
+# zellij auto-start for new tabs
+if [[ -z "$ZELLIJ" && $- == *i* ]]; then
+    if command -v zellij >/dev/null 2>&1; then
+        exec zellij
+    fi
+fi
