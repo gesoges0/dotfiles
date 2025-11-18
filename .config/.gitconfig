@@ -27,6 +27,7 @@
     features = my-delta-config
 
 [delta "my-delta-config"]
+    # features = mantis-shrimp  # mac laptop
     side-by-side = true
     # line-numbers = true
     # features = woolly-mammoth
