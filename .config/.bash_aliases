@@ -16,6 +16,7 @@ alias gdc='git diff --cached'
 alias gdh='git diff HEAD^ HEAD'
 alias gp='git push origin $(tb)'
 alias gh-clone='ghq get'
+alias crr='cd $(git rev-parse --show-toplevel)'  # cd repository root
 
 # diff
 alias diff="colordiff -y -W 30" # --suppress-common-lines"
